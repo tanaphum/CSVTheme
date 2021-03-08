@@ -22,6 +22,7 @@
 library(shiny)
 library(shinydashboard)
 library(shinysky)
+library(plotly)
 
 
 # Define server logic required to draw a histogram
@@ -63,15 +64,12 @@ shinyServer(function(input, output) {
             summary(mysubsetdata())
         })
         
-        output$plot <- renderPlot({
+        output$plot <- renderPlotly({
             if(is.null(previous())){return(NULL)}
-            plot(mysubsetdata())
+            p <-data.frame(index =1:length(previous()[[1]]),previous())
+            plot_ly(p,x=~index ,y = p[[input$aa2]],type = "scatter",mode = 'markers',marker = list( size = 12))
         })
         
-        output$info <- renderText({
-            if(is.null(previous())){return(NULL)}
-            paste0("x=", input$plot_click$x, "\ny=", input$plot_click$y)
-        })
 
     
 

@@ -26,7 +26,7 @@ library(shinysky)
 
 # Define UI for application that draws a histogram
 shinyUI(dashboardPage(
-    dashboardHeader(title = "Upload and Edit a table"),
+    dashboardHeader(title = "Upload and Edit CSV"),
     dashboardSidebar(sidebarMenu(id = "tabs",
                                  menuItem("Upload and edit", tabName = "one", icon = icon("dashboard")),
                                  menuItem("plot", tabName = "two", icon = icon("briefcase"))
@@ -50,9 +50,8 @@ shinyUI(dashboardPage(
             tabItem(tabName = "two",
                     uiOutput(outputId = "aa"),
                     textOutput("a"),
-                    verbatimTextOutput("info"),
                     verbatimTextOutput("summary"),
-                    plotOutput("plot", click = "plot_click")
+                    plotlyOutput("plot")
             )
         )
     )
