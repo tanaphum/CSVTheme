@@ -1,6 +1,10 @@
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.6.3-6666ff.svg)](https://cran.r-project.org/)
 # CSVTheme
-- Shiny webapp can upload csv file, edit csv file and download the csv file which you edited it. 
+- Shiny webapp can upload csv file, edit csv file and download the csv file which you edited it.
+
+# ShinySky Package
+https://github.com/AnalytixWare/ShinySky
+install - devtools::install_github("AnalytixWare/ShinySky")
 
 # Ref. code
 code(shinysky) https://stackoverflow.com/questions/35323980/can-you-use-rs-native-data-editor-to-edit-a-csv-from-within-shiny
