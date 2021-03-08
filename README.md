@@ -4,7 +4,7 @@
 
 # ShinySky Package
 https://github.com/AnalytixWare/ShinySky
-install - devtools::install_github("AnalytixWare/ShinySky")
+- install - devtools::install_github("AnalytixWare/ShinySky")
 
 # Ref. code
 code(shinysky) https://stackoverflow.com/questions/35323980/can-you-use-rs-native-data-editor-to-edit-a-csv-from-within-shiny
