@@ -65,9 +65,12 @@ shinyServer(function(input, output) {
         })
         
         output$plot <- renderPlotly({
+            withProgress(message = 'Making plot',
+                         detail = 'This may take a while...', value = 0, {
             if(is.null(previous())){return(NULL)}
             p <-data.frame(index =1:length(previous()[[1]]),previous())
             plot_ly(p,x=~index ,y = p[[input$aa2]],type = "scatter",mode = 'markers',marker = list( size = 12))
+                         })
         })
         
 

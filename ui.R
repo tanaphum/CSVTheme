@@ -23,6 +23,7 @@
 library(shiny)
 library(shinydashboard)
 library(shinysky)
+library(plotly)
 
 # Define UI for application that draws a histogram
 shinyUI(dashboardPage(
