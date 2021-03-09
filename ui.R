@@ -1,11 +1,4 @@
 #
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 # shinysky
 # https://github.com/AnalytixWare/ShinySky
 # devtools::install_github("AnalytixWare/ShinySky")
@@ -18,6 +11,9 @@
 #
 # example code(plot by choosing columns) https://stackoverflow.com/questions/52193179/how-to-plot-in-rshiny-depending-on-the-columns-i-choose
 # answered by Pork Chop
+#
+# developed code by Tanaphum Wichaita
+# https://github.com/tanaphum
 
 
 library(shiny)
