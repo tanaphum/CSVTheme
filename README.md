@@ -5,7 +5,7 @@
 # ShinySky Package
 https://github.com/AnalytixWare/ShinySky
 ```r
-install - devtools::install_github("AnalytixWare/ShinySky")
+devtools::install_github("AnalytixWare/ShinySky")
 ```
 
 # Ref. code
