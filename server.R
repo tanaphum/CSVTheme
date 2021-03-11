@@ -21,6 +21,7 @@ library(shinysky)
 library(plotly)
 
 
+
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
     previous<-reactive({
@@ -39,6 +40,14 @@ shinyServer(function(input, output) {
                 sample_data
             }
         })
+        
+        sample_data_backup <- reactive({
+            read.csv(input$datafile$datapath)
+        })
+        observeEvent(input$reset, {
+            output$hotable1 <- renderHotable({sample_data_backup()}, readOnly = F)
+        })
+        
         output$hotable1 <- renderHotable({sample_data()}, readOnly = F)
         output$downloadData <- downloadHandler(filename = function() {paste(Sys.Date(), '- My New Table.csv', sep=' ') }
                                                ,content = function(file) {write.csv(sample_data(), file, row.names = FALSE)})
@@ -61,6 +70,7 @@ shinyServer(function(input, output) {
         })
         
         output$plot <- renderPlotly({
+            req (!is.null(input$aa2))
             withProgress(message = 'Making plot',
                          detail = 'This may take a while...', value = 0, {
             if(is.null(previous())){return(NULL)}
